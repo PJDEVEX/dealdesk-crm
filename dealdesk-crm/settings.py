@@ -35,7 +35,7 @@ DEBUG = True
 
 # List of allowed hosts for the Django application
 ALLOWED_HOSTS = [
-    'dealdesk-crm.herokuapp.com',
+    'dealdesk-crm-demo-77df066e05fc.herokuapp.com',
     '8000-pjdevex-dealdeskcrm-vjkodp24crr.ws-eu101.gitpod.io',
     '127.0.0.1',
 ]
