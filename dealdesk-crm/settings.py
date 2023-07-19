@@ -31,12 +31,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 # Set DEBUG mode based on the 'DEVELOPMENT' environment variable
 development = os.environ.get('DEVELOPMENT', False)
-DEBUG = development
+DEBUG = True
 
 # List of allowed hosts for the Django application
 ALLOWED_HOSTS = [
     'dealdesk-crm.herokuapp.com',
-    '8000-pjdevex-dealdesk-x2u1gsmdgdp.ws-eu101.gitpod.io',
+    '8000-pjdevex-dealdeskcrm-vjkodp24crr.ws-eu101.gitpod.io',
     '127.0.0.1',
 ]
 
@@ -68,7 +68,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 # Account settings for authentication and redirection
-LOGIN_REDIRECT_URL = '/dashboard/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = False
