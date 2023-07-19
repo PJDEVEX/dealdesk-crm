@@ -9,11 +9,14 @@ from django.views.generic import (
     DetailView,
     DeleteView
 )
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.db import IntegrityError, transaction
 from .models import Client
 from .forms import ClientForm, ClientFilterForm
 
 
+@method_decorator(login_required, name='dispatch')
 class ClientListView(ListView):
     """
     Display a list of clients.
@@ -75,6 +78,7 @@ class ClientListView(ListView):
             })
 
 
+@method_decorator(login_required, name='dispatch')
 class ClientCreateView(CreateView):
     """
     Create a new client.
@@ -100,6 +104,7 @@ class ClientCreateView(CreateView):
         return super().form_valid(form)
 
 
+@method_decorator(login_required, name='dispatch')
 class ClientUpdateView(UpdateView):
     """
     Update an existing client.
@@ -131,6 +136,7 @@ class ClientUpdateView(UpdateView):
         return super().form_valid(form)
 
 
+@method_decorator(login_required, name='dispatch')
 class ClientDetailView(DetailView):
     """
     Display details of a client.
@@ -147,6 +153,7 @@ class ClientDetailView(DetailView):
         return get_object_or_404(Client, pk=pk)
 
 
+@method_decorator(login_required, name='dispatch')
 class ClientDeleteView(DeleteView):
     """
     Delete a client.

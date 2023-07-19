@@ -7,10 +7,12 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from .forms import LeadMasterFilterForm, LeadMasterForm
 from .models import LeadMaster
 
-
+@method_decorator(login_required, name='dispatch')
 class LeadListView(ListView):
     """
     View class for listing lead instances.
@@ -66,6 +68,7 @@ class LeadListView(ListView):
         return context
 
 
+@method_decorator(login_required, name='dispatch')
 class LeadCreateView(CreateView):
     """
     View class for creating a new lead instance.
@@ -91,6 +94,7 @@ class LeadCreateView(CreateView):
         return super().form_valid(form)
 
 
+@method_decorator(login_required, name='dispatch')
 class LeadDetailView(DetailView):
     """
     View class for displaying details of a lead instance.
@@ -108,6 +112,7 @@ class LeadDetailView(DetailView):
         return get_object_or_404(LeadMaster, pk=pk)
 
 
+@method_decorator(login_required, name='dispatch')
 class LeadUpdateView(UpdateView):
     """
     View class for updating a lead instance.
@@ -147,6 +152,7 @@ class LeadUpdateView(UpdateView):
         return super().form_valid(form)
 
 
+@method_decorator(login_required, name='dispatch')
 class LeadDeleteView(DeleteView):
     """
     View class for deleting a lead instance.
