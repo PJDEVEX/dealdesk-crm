@@ -17,7 +17,7 @@
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              {% if user.is_authenticated %}
+              
               <li class="nav-item {% if request.resolver_match.url_name == 'dashboard:dashboard' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'dashboard:dashboard' %}">Dashboard</a>
               </li>
@@ -31,7 +31,7 @@
               <li class="nav-item {% if request.resolver_match.url_name == 'client:client_list' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'client:client_list' %}">Clients</a>
               </li>
-              {% endif %}
+              
               {% if not user.is_authenticated %}
               <li class="nav-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'account_signup' %}">Signup</a>
@@ -39,8 +39,8 @@
               <li class="nav-item {% if request.resolver_match.url_name == 'account_login' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'account_login' %}">Signin</a>
               </li>
-              {% endif %}
-              {% if user.is_authenticated %}
+              {% else %}
+              
               <li class="nav-item {% if request.resolver_match.url_name == 'account_logout' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'account_logout' %}">Signout</a>
               </li>
