@@ -3,7 +3,8 @@
     <nav class="navbar bg-body-tertiary fixed-top d-lg-none">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'landing:index' %}">
-          <img src="https://res.cloudinary.com/pjdevex/image/upload/v1689184170/static/dealdesk_crm_logo/dd_hr_light_qo3739.webp"
+          <img
+            src="https://res.cloudinary.com/pjdevex/image/upload/v1689184170/static/dealdesk_crm_logo/dd_hr_light_qo3739.webp"
             alt="DealDesk | CRM" class="card-img-top rounded" style="width: 8rem;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -15,9 +16,8 @@
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DealDesk | CRM</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body">
+          <div class="offcanvas-body position-relative h-100">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              
               <li class="nav-item {% if request.resolver_match.url_name == 'dashboard:dashboard' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'dashboard:dashboard' %}">Dashboard</a>
               </li>
@@ -31,7 +31,7 @@
               <li class="nav-item {% if request.resolver_match.url_name == 'client:client_list' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'client:client_list' %}">Clients</a>
               </li>
-              
+              <hr>
               {% if not user.is_authenticated %}
               <li class="nav-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'account_signup' %}">Signup</a>
@@ -40,12 +40,24 @@
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'account_login' %}">Signin</a>
               </li>
               {% else %}
-              
               <li class="nav-item {% if request.resolver_match.url_name == 'account_logout' %}active{% endif %}">
                 <a class="nav-link fs-5 fs-md-4" href="{% url 'account_logout' %}">Signout</a>
               </li>
               {% endif %}
+              <hr>
             </ul>
+            <!-- Footer -->
+            <div class="d-flex flex-column position-absolute bottom-0 start-0 ps-3 pb-3">
+              <div class="mt-auto">
+                <p class="text-body-secondary mb-auto">© 2023 PJDEVEX</p>
+                <a href="https://github.com/PJDEVEX" target="_blank" class="text-body-secondary ms-1"><i
+                    class="fa-brands fa-github fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/piyankara-jayadewa/" target="_blank"
+                  class="text-body-secondary ms-1"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+                <a href="" target="_blank" class="text-body-secondary ms-1"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+            <!-- Footer end -->
           </div>
         </div>
       </div>
