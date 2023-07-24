@@ -3,30 +3,34 @@
     <div class="offcanvas-header">
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto vh-100">
-      <ul class="nav flex-column">
+    <div class="d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto vh-100">
+      <ul class="nav nav-pills flex-column mb-0">
         {% if user.is_authenticated %}
         <li class="nav-item mb-2 {% if request.resolver_match.url_name == 'dashboard:dashboard' %}active{% endif %}">
-          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4" href="{% url 'dashboard:dashboard' %}">
+          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4"
+            href="{% url 'dashboard:dashboard' %}">
             <i class="fa-solid fa-clipboard-check"></i>
             Dashboard
           </a>
         </li>
         <!-- Add the "navbar-light" class to the nav-link elements in light mode -->
         <li class="nav-item mb-2 {% if request.resolver_match.url_name == 'task_manager:task_list' %}active{% endif %}">
-          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4" href="{% url 'task_manager:task_list' %}">
+          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4"
+            href="{% url 'task_manager:task_list' %}">
             <i class="fa-solid fa-clipboard-check"></i>
             Task Manager
           </a>
         </li>
         <li class="nav-item mb-2 {% if request.resolver_match.url_name == 'lead_master:lead_list' %}active{% endif %}">
-          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4" href="{% url 'lead_master:lead_list' %}">
+          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4"
+            href="{% url 'lead_master:lead_list' %}">
             <i class="fa-solid fa-filter-circle-dollar"></i>
             Projects
           </a>
         </li>
         <li class="nav-item mb-2{% if request.resolver_match.url_name == 'client:client_list' %}active{% endif %}">
-          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4" href="{% url 'client:client_list' %}">
+          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4"
+            href="{% url 'client:client_list' %}">
             <i class="fa-solid fa-users"></i>
             Clients
           </a>
@@ -35,26 +39,37 @@
         <hr class="mt-3">
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4" href="{% url 'account_logout' %}">
+          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4"
+            href="{% url 'account_logout' %}">
             <i class="fa-solid fa-arrow-right-to-bracket"></i>
             Signout
           </a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4" href="{% url 'account_login' %}">
+          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4"
+            href="{% url 'account_login' %}">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
             Signin
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4" href="{% url 'account_signup' %}">
+          <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-5 fs-lg-4"
+            href="{% url 'account_signup' %}">
             <i class="fa-solid fa-right-to-bracket"></i>
             Signup
           </a>
         </li>
         {% endif %}
       </ul>
+
+      <hr>
+      <div class="d-flex align-items-start flex-column mb-5" style="height: 50%;">
+
+        <div class="mt-auto p-2">Flex item</div>
+      </div>
+
+
     </div>
   </div>
 </div>
