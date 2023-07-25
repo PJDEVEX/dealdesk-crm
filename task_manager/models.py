@@ -10,13 +10,15 @@ def get_salesman():
 
 
 STATUS_CHOICES = [
-    ("TBD", "To Do"),
+    ("TBD", "Not Started"),
+    ("IPG", "In Progress"),
     ("D", "Done"),
 ]
 
 PRIORITY_CHOICES = [
-    ("N", "Normal"),
-    ("U", "Urgent"),
+    ("LP", "Low Priority"),
+    ("MP", "Medium Priority"),
+    ("TP", "Top Priority"),
 ]
 
 
@@ -30,13 +32,13 @@ class TaskManager(models.Model):
     status = models.CharField(
         max_length=50,
         choices=STATUS_CHOICES,
-        default="To Do",
+        default="Not Started",
         null=False
     )
     priority = models.CharField(
         max_length=50,
         choices=PRIORITY_CHOICES,
-        default="Normal",
+        default="Medium Priority",
         null=False
     )
     assigned_to = models.ForeignKey(
