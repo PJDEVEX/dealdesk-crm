@@ -1,10 +1,13 @@
 from django.shortcuts import render, get_list_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from .models import TaskManager
 from .forms import TaskManagerFilterForm, TaskManagerForm
 
 
+@method_decorator(login_required, name='dispatch')
 class TaskListView(ListView):
     """
     View class for listing tasks.
@@ -42,6 +45,7 @@ class TaskListView(ListView):
         return context
 
 
+@method_decorator(login_required, name='dispatch')
 class TaskCreateView(CreateView):
     """
     View class for creating a new task.
@@ -66,6 +70,7 @@ class TaskCreateView(CreateView):
         return super().form_valid(form)
 
 
+@method_decorator(login_required, name='dispatch')
 class TaskUpdateView(UpdateView):
     """
     View class for updating a task.
@@ -90,6 +95,7 @@ class TaskUpdateView(UpdateView):
         return super().form_valid(form)
 
 
+@method_decorator(login_required, name='dispatch')
 class TaskDeleteView(DeleteView):
     """
     View class for deleting a task.
