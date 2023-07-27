@@ -34,8 +34,6 @@ development = os.environ.get('DEVELOPMENT', False)
 DEBUG = development
 
 # List of allowed hosts for the Django application
-ALLOWED_HOSTS = []
-
 if development:
     ALLOWED_HOSTS = [(
         'localhost', 
