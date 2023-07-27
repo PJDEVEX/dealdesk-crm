@@ -38,14 +38,14 @@
         {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-6" href="{% url 'account_logout' %}">
-            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
             Signout
           </a>
         </li>
         {% else %}
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-2 navbar-light fs-6" href="{% url 'account_login' %}">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
             Signin
           </a>
         </li>
