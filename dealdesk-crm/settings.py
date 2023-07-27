@@ -36,7 +36,7 @@ DEBUG = True
 # List of allowed hosts for the Django application
 if development:
     ALLOWED_HOSTS = [(
-        'localhost', 
+        'localhost',
         '8000-pjdevex-dealdeskcrm-vjkodp24crr.ws-eu102.gitpod.io'
         )]
 else:
