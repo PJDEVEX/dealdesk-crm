@@ -34,15 +34,18 @@ development = os.environ.get('DEVELOPMENT', False)
 DEBUG = True
 
 # List of allowed hosts for the Django application
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '8000-pjdevex-dealdeskcrm-vjkodp24crr.ws-eu102.gitpod.io',
+    'dealdesk-crm-demo-77df066e05fc.herokuapp.com']
 
-if development:
-    ALLOWED_HOSTS = [
-        'localhost',
-        '8000-pjdevex-dealdeskcrm-vjkodp24crr.ws-eu102.gitpod.io'
-        ]
-else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+# if development:
+#     ALLOWED_HOSTS = [
+#         'localhost',
+#         '8000-pjdevex-dealdeskcrm-vjkodp24crr.ws-eu102.gitpod.io'
+#         ]
+# else:
+#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 # Application definition
 INSTALLED_APPS = [
