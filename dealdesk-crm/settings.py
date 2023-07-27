@@ -31,11 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 # Set DEBUG mode based on the 'DEVELOPMENT' environment variable
 development = os.environ.get('DEVELOPMENT', False)
-DEBUG = True
+DEBUG = development
 
 # List of allowed hosts for the Django application
 ALLOWED_HOSTS = [
-    'localhost',
+    '127.0.0.1:8000',
     '8000-pjdevex-dealdeskcrm-vjkodp24crr.ws-eu102.gitpod.io',
     'dealdesk-crm-demo-77df066e05fc.herokuapp.com']
 
